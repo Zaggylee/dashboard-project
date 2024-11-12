@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <!--nav section-->
+    <nav class="flex container mx-auto border-b-2 items-center py-2 md:py-0">
+      <!--nav logo-->
+      <div class="flex text-purple-950 font-medium gap-1 border-r pr-8">
+        <i class="bi bi-shield-check"></i>
+        <h2>SecureID</h2>
+      </div>
+
+      <!--***-->
+      <!--nav links-->
+      <ul class="hidden md:flex gap-5 pl-8">
+        <li
+          class="font-light py-4 text-gray-500 cursor-pointer hover:text-purple-950 hover:font-medium hover:border-b-2 hover:border-purple-950"
+        >
+          <a href="#">Overview</a>
+        </li>
+        <li
+          class="font-light py-4 text-gray-500 cursor-pointer hover:text-purple-950 hover:font-medium hover:border-b-2 hover:border-purple-950"
+        >
+          <a href="#">User Management</a>
+        </li>
+        <li
+          class="font-light py-4 text-gray-500 cursor-pointer hover:text-purple-950 hover:font-medium hover:border-b-2 hover:border-purple-950"
+        >
+          <a href="#">Verification Requests</a>
+        </li>
+        <li
+          class="font-light py-4 text-gray-500 cursor-pointer hover:text-purple-950 hover:font-medium hover:border-b-2 hover:border-purple-950"
+        >
+          <a href="#">Reports</a>
+        </li>
+      </ul>
+      <!--***-->
+      <!--nav icons-->
+      <div class="ml-auto flex gap-4 text-gray-500 items-center">
+        <i class="bi bi-search"></i>
+        <i class="bi bi-bell"></i>
+        <div class="border-l pl-4">
+          <img
+            class="w-10 h-10 rounded-full"
+            src="data:image/jpeg;base64,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"
+            alt="Blue Avatar"
+          />
+        </div>
+      </div>
+      <!--***-->
+    </nav>
+    <!--nav section-->
+    <!--User greeting section-->
+    <section
+      class="container mx-auto flex justify-between flex-col gap-4 px-4 md:flex-row md:px-0 md:items-center mt-6"
+    >
+      <div>
+        <h1 class="text-3xl font-medium mb-2">Hi, Ruqayyah</h1>
+        <p class="font-light text-gray-500">
+          Here's an overview of your dashboard.
+        </p>
+      </div>
+      <button
+        class="bg-purple-900 text-white rounded-md p-2 flex items-center w-fit"
+      >
+        <span>Create Request</span>
+        <i class="bi bi-plus text-3xl font-bold"></i>
+      </button>
+    </section>
+    <!--user greeting ends-->
+    <!--statistics section-->
+    <section
+      class="container mx-auto mt-10 grid gap-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+    >
+      <!--single card-->
+      <div class="bg-purple-50 p-8 rounded-md">
+        <div
+          class="bg-purple-200 h-9 w-9 rounded-full flex justify-center items-center mb-3"
+        >
+          <i class="bi bi-patch-check"></i>
+        </div>
+        <h3 class="font-medium text-gray-600 mb-4">TOTAL VERIFICATIONS</h3>
+        <div class="flex justify-between">
+          <h4 class="font-bold text-[2rem]">350</h4>
+          <div>
+            <p class="text-right">
+              <span class="text-green-400 text-lg"
+                ><i class="bi bi-arrow-up-short"></i></span
+              ><span class="text-green-800 text-lg">2.5%</span>
+            </p>
+            <p class="text-gray-500 font-light text-sm">
+              Increase since last period
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--***-->
+      <!--single card-->
+      <div class="bg-cyan-50 p-8 rounded-md">
+        <div
+          class="bg-cyan-200 h-9 w-9 rounded-full flex justify-center items-center mb-3"
+        >
+          <i class="bi bi-patch-check"></i>
+        </div>
+        <h3 class="font-medium text-gray-600 mb-4">COMPLETED VERIFICATIONS</h3>
+        <div class="flex justify-between">
+          <h4 class="font-bold text-[2rem]">300</h4>
+          <div>
+            <p class="text-right">
+              <span class="text-green-400 text-lg"
+                ><i class="bi bi-arrow-up-short"></i></span
+              ><span class="text-green-800 text-lg">2.5%</span>
+            </p>
+            <p class="text-gray-500 font-light text-sm">
+              Increase since last period
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--***-->
+      <!--single card-->
+      <div class="bg-amber-100 p-8 rounded-md">
+        <div
+          class="bg-amber-200 h-9 w-9 rounded-full flex justify-center items-center mb-3"
+        >
+          <i class="bi bi-patch-check"></i>
+        </div>
+        <h3 class="font-medium text-gray-600 mb-4">PENDING VERIFICATIONS</h3>
+        <div class="flex justify-between">
+          <h4 class="font-bold text-[2rem]">30</h4>
+          <div>
+            <p class="text-right">
+              <span class="text-green-400 text-lg"
+                ><i class="bi bi-arrow-up-short"></i></span
+              ><span class="text-green-800 text-lg">2.5%</span>
+            </p>
+            <p class="text-gray-500 font-light text-sm">
+              Increase since last period
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--***-->
+      <!--single card-->
+      <div class="bg-orange-50 p-8 rounded-md">
+        <div
+          class="bg-orange-200 h-9 w-9 rounded-full flex justify-center items-center mb-3"
+        >
+          <i class="bi bi-patch-check"></i>
+        </div>
+        <h3 class="font-medium text-gray-600 mb-4">FLAGGED VERIFICATIONS</h3>
+        <div class="flex justify-between">
+          <h4 class="font-bold text-[2rem]">20</h4>
+          <div>
+            <p class="text-right">
+              <span class="text-green-400 text-lg"
+                ><i class="bi bi-arrow-up-short"></i></span
+              ><span class="text-green-800 text-lg">2.5%</span>
+            </p>
+            <p class="text-gray-500 font-light text-sm">
+              Increase since last period
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--***-->
+    </section>
+    <!--statistics section ends-->
+    <!--quick action section-->
+    <section class="container mx-auto mt-10">
+      <h2 class="text-3xl font-medium mb-6">Quick Actions</h2>
+      <div class="grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-3">
+        <!--single customer-->
+        <div class="flex gap-4 border p-4 rounded-md">
+          <p
+            class="bg-purple-800 text-white text-3xl p-4 rounded-md shadow-2xl"
+          >
+            <i class="bi bi-person-plus"></i>
+          </p>
+          <div>
+            <h3 class="font-medium text-xl">Add Customers</h3>
+            <p class="text-gray-500 font-light mt-2 text-sm">
+              Begin the KYC process for a new customer.
+            </p>
+          </div>
+        </div>
+        <!--***-->
+        <!--single customer-->
+        <div class="flex gap-4 border p-4 rounded-md">
+          <p
+            class="bg-purple-800 text-white text-3xl p-4 rounded-md shadow-2xl"
+          >
+            <i class="bi bi-journal-text"></i>
+          </p>
+          <div>
+            <h3 class="font-medium text-xl">Review verifications</h3>
+            <p class="text-gray-500 font-light mt-2 text-sm">
+              View and review pending KYC approvals.
+            </p>
+          </div>
+        </div>
+        <!--***-->
+        <!--single customer-->
+        <div class="flex gap-4 border p-4 rounded-md">
+          <p
+            class="bg-purple-800 text-white text-3xl p-4 rounded-md shadow-2xl"
+          >
+            <i class="bi bi-pie-chart"></i>
+          </p>
+          <div>
+            <h3 class="font-medium text-xl">Generate Reports</h3>
+            <p class="text-gray-500 font-light mt-2 text-sm">
+              create detailed reports easily and quickly.
+            </p>
+          </div>
+        </div>
+        <!--***-->
+      </div>
+    </section>
+    <!--quick acton ends-->
+    <!--recent activities section-->
+    <section class="container mx-auto mt-10">
+      <section class="flex justify-between">
+        <h2 class="text-3xl font-medium mb-6">Recent Activities</h2>
+        <p class="text-purple-900 font-medium">See All</p>
+      </section>
+      <section class="border rounded-md">
+        <!--table action-->
+        <div class="flex justify-between items-center m-4">
+          <div class="border max-w-[30rem] w-full p-3 rounded-md flex">
+            <i class="bi bi-search mr-2"></i>
+            <input
+              type="text"
+              placeholder="Search"
+              class="w-full outline-none"
+            />
+          </div>
+          <div class="flex gap-2">
+            <p class="border p-2 rounded-md">
+              <i class="bi bi-filter mr-1"></i> <span>Filter</span>
+            </p>
+            <p class="border p-2 rounded-md">
+              <i class="bi bi-download mr-1"></i><span>Export</span>
+            </p>
+          </div>
+        </div>
+        <!--***-->
+        <!--table-->
+        <table class="w-full text-left">
+          <thead class="bg-slate-50">
+            <tr>
+              <th class="p-4 font-medium text-gray-500">Timestamp</th>
+              <th class="p-4 font-medium text-gray-500">Activity Type</th>
+              <th class="p-4 font-medium text-gray-500">Company</th>
+              <th class="p-4 font-medium text-gray-500">User</th>
+              <th class="p-4 font-medium text-gray-500">Status Description</th>
+              <th class="p-4 font-medium text-gray-500">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b">
+              <td class="p-4 text-gray-500 font-light">Sept 2, 2024</td>
+              <td class="p-4 text-gray-500 font-light">New KYC Request</td>
+              <td>
+                <div class="flex items-center gap-2 p-4">
+                  <img src="/images/facebook.png" class="w-10" alt="" /><span
+                    >ABC Fintech</span
+                  >
+                </div>
+              </td>
+              <td class="p-4 text-gray-500 font-light">John Doe</td>
+              <td class="p-4 text-gray-500 font-light">
+                Submitted a new KYC Request.
+              </td>
+              <td>
+                <div class="p-4 flex w-[15rem]">
+                  <span
+                    class="bg-orange-100 p-2 rounded-full border border-orange-300 text-orange-700 mr-auto"
+                    >Pending Approval</span
+                  >
+                  <i
+                    class="bi bi-three-dots-vertical text-gray-500 text-xl"
+                  ></i>
+                </div>
+              </td>
+            </tr>
+            <tr class="border-b">
+              <td class="p-4 text-gray-500 font-light">Sept 2, 2024</td>
+              <td class="p-4 text-gray-500 font-light">Document Approved</td>
+              <td>
+                <div class="flex items-center gap-2 p-4">
+                  <img src="/images/instagram.png" class="w-10" alt="" /><span
+                    >XYZ Capital</span
+                  >
+                </div>
+              </td>
+              <td class="p-4 text-gray-500 font-light">King promise</td>
+              <td class="p-4 text-gray-500 font-light">
+                ID Verification Document Approved.
+              </td>
+              <td>
+                <div class="p-4 flex w-[15rem]">
+                  <span
+                    class="bg-cyan-50 p-2 rounded-full border border-cyan-300 text-cyan-700 mr-auto"
+                    >Completed</span
+                  >
+                  <i
+                    class="bi bi-three-dots-vertical text-gray-500 text-xl"
+                  ></i>
+                </div>
+              </td>
+            </tr>
+            <tr class="border-b">
+              <td class="p-4 text-gray-500 font-light">Sept 3, 2024</td>
+              <td class="p-4 text-gray-500 font-light">
+                Authentication Failure
+              </td>
+              <td>
+                <div class="flex items-center gap-2 p-4">
+                  <img src="/images/tiktok.png" class="w-10" alt="" /><span
+                    >Rendal Co</span
+                  >
+                </div>
+              </td>
+              <td class="p-4 text-gray-500 font-light">Jojo Bear</td>
+              <td class="p-4 text-gray-500 font-light">
+                Failed authentication attempt.
+              </td>
+              <td>
+                <div class="p-4 flex w-[15rem]">
+                  <span
+                    class="bg-red-50 p-2 rounded-full border border-red-300 text-red-700 mr-auto"
+                    >Failed</span
+                  >
+                  <i
+                    class="bi bi-three-dots-vertical text-gray-500 text-xl"
+                  ></i>
+                </div>
+              </td>
+            </tr>
+            <tr class="border-b">
+              <td class="p-4 text-gray-500 font-light">Sept 3, 2024</td>
+              <td class="p-4 text-gray-500 font-light">
+                Document Review Completed
+              </td>
+              <td>
+                <div class="flex items-center gap-2 p-4">
+                  <img src="/images/tiktok.png" class="w-10" alt="" /><span
+                    >Hourlass</span
+                  >
+                </div>
+              </td>
+              <td class="p-4 text-gray-500 font-light">Samuel Abati</td>
+              <td class="p-4 text-gray-500 font-light">
+                Review of KYC documents completed.
+              </td>
+              <td>
+                <div class="p-4 flex w-[15rem]">
+                  <span
+                    class="bg-cyan-50 p-2 rounded-full border border-cyan-300 text-cyan-700 mr-auto"
+                    >Completed</span
+                  >
+                  <i
+                    class="bi bi-three-dots-vertical text-gray-500 text-xl"
+                  ></i>
+                </div>
+              </td>
+            </tr>
+            <tr class="border-b">
+              <td class="p-4 text-gray-500 font-light">Sept 3, 2024</td>
+              <td class="p-4 text-gray-500 font-light">
+                Suspicious Activity Reported
+              </td>
+              <td>
+                <div class="flex items-center gap-2 p-4">
+                  <img src="/images/whatsapp.png" class="w-10" alt="" /><span
+                    >Layers</span
+                  >
+                </div>
+              </td>
+              <td class="p-4 text-gray-500 font-light">Sewa spag</td>
+              <td class="p-4 text-gray-500 font-light">
+                Suspicious activity flagged.
+              </td>
+              <td>
+                <div class="p-4 flex w-[15rem]">
+                  <span
+                    class="bg-orange-50 p-2 rounded-full border border-red-300 text-orange-700 mr-auto"
+                    >flagged</span
+                  >
+                  <i
+                    class="bi bi-three-dots-vertical text-gray-500 text-xl"
+                  ></i>
+                </div>
+              </td>
+            </tr>
+            <tr class="border-b">
+              <td class="p-4 text-gray-500 font-light">Sept 4, 2024</td>
+              <td class="p-4 text-gray-500 font-light">
+                Autehntication Success
+              </td>
+              <td>
+                <div class="flex items-center gap-2 p-4">
+                  <img src="/images/search.png" class="w-10" alt="" /><span
+                    >Quotient</span
+                  >
+                </div>
+              </td>
+              <td class="p-4 text-gray-500 font-light">Felix Ikubode</td>
+              <td class="p-4 text-gray-500 font-light">
+                Successful autehntication.
+              </td>
+              <td>
+                <div class="p-4 flex w-[15rem]">
+                  <span
+                    class="bg-green-50 p-2 rounded-full border border-green-300 text-green-700 mr-auto"
+                    >Success</span
+                  >
+                  <i
+                    class="bi bi-three-dots-vertical text-gray-500 text-xl"
+                  ></i>
+                </div>
+              </td>
+            </tr>
+            <tr class="border-b">
+              <td class="p-4 text-gray-500 font-light">Sept 4, 2024</td>
+              <td class="p-4 text-gray-500 font-light">New KYC Request</td>
+              <td>
+                <div class="flex items-center gap-2 p-4">
+                  <img src="/images/twitter.png" class="w-10" alt="" /><span
+                    >Layers</span
+                  >
+                </div>
+              </td>
+              <td class="p-4 text-gray-500 font-light">Asake Mr Money</td>
+              <td class="p-4 text-gray-500 font-light">
+                Submitted a new KYC Request.
+              </td>
+              <td>
+                <div class="p-4">
+                  <span
+                    class="bg-orange-100 p-2 rounded-full border border-orange-300 text-orange-700 mr-10"
+                    >Pending Approval</span
+                  >
+                  <i
+                    class="bi bi-three-dots-vertical text-gray-500 text-xl"
+                  ></i>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!--***-->
+        <!--table pagination-->
+        <div class="flex justify-between p-4 mt-4 border-t items-center">
+          <button class="py-2 px-4 border rounded-md">
+            <i class="bi bi-arrow-left-short"></i><span>Previous</span>
+          </button>
+          <ul class="flex gap-4">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>...</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+          </ul>
+          <button class="py-2 px-4 border rounded-md">
+            <span>Next</span><i class="bi bi-arrow-right-short"></i>
+          </button>
+        </div>
+        <!--***-->
+      </section>
+    </section>
+    <!--recent activities ends-->
+    <!--tailwind link-->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </body>
+</html>
